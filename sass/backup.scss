@@ -1,0 +1,335 @@
+@import "reset";
+@import "config";
+@import "utilities";
+@import "buttons";
+@import "inputs";
+@import "dialogs";
+
+
+:root {
+    font-size: 15px;
+}
+
+* {
+    box-sizing: border-box;
+
+    &::after,
+    &::before,
+    &:hover {
+        transition: all .2s ease-in-out;
+    }
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    color      : $dark-grey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height  : 1;
+    margin-bottom: 1rem;
+}
+
+// ----------------------Navbar-----------------------------------------------------
+
+.navbar {
+
+    // box-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
+    position        : sticky;
+    left            : 0;
+    top             : 0;
+    z-index         : 9999;
+    background-color: $white;
+
+    &__wrapper {
+        display              : grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content      : center;
+        align-items          : center;
+        padding              : 2rem;
+        grid-gap             : 2rem;
+    }
+
+    &__nav {
+        display        : flex;
+        flex-direction : row;
+        justify-content: flex-end;
+    }
+
+    &__nav-group {
+        display       : flex;
+        flex-direction: row;
+        margin-right  : .5rem;
+    }
+
+    &__nav-link {
+        display: inline-block;
+        padding: .7em .8em;
+        color  : $dark-grey;
+
+        &:hover {
+            background-color: $light-blue;
+            color           : #ffffff;
+        }
+    }
+
+    &__nav-active {
+        background-color: $light-green;
+        color           : $white;
+    }
+
+    &__nav-socials {
+        display        : flex;
+        justify-content: flex-end;
+        align-items    : center;
+    }
+
+    &__nav-social {
+        padding     : .3rem .7rem;
+        color       : $dark-grey-2;
+        border      : 1px solid $dark-grey;
+        margin-right: .5rem;
+        border      : 1px solid $light-blue;
+
+        &:hover {
+            color: $dark-grey;
+        }
+    }
+
+    &__search-button {
+        margin-top      : 0px;
+        background-color: $light-green;
+        color           : $white;
+    }
+}
+
+// --------------------------Hero---------------------------------------------------
+
+.hero {
+    background-image : url('../img/uploads/slider_01.jpg');
+    background-size  : cover;
+    background-repeat: no-repeat;
+    height           : 85vh;
+    position         : relative;
+    z-index          : 0;
+    color            : $white;
+
+    @include overlay(.7);
+
+    &__wrapper {
+        display              : grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content      : end;
+        align-content        : end;
+        height               : 100%;
+        grid-gap             : 2rem;
+    }
+
+    &__content {
+        height         : 100%;
+        z-index        : 1000;
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+    }
+
+    &__form {
+        z-index         : 1000;
+        background-color: $light-grey;
+        color           : $dark-grey-2;
+    }
+
+    &__form-subtitle {
+        display    : inline-block;
+        margin-left: .5rem;
+    }
+
+    &__controls {
+        margin-bottom: 1.5rem;
+    }
+
+    &__input {
+        border: 1px solid $light-grey;
+
+        &:focus {
+            border: 1px solid $light-green;
+        }
+    }
+
+    &__input:first-child {
+        margin-right: 1.2rem;
+    }
+
+    &__icon-envelope {
+        color: $light-green;
+    }
+}
+
+
+// ---------------------------------- Features---------------------------------------
+
+.features {
+    &__wrapper {
+        display              : grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content      : center;
+        align-items          : center;
+        grid-gap             : 2rem;
+    }
+
+    &__card {
+        background-color: $light-grey-3;
+        padding         : 3rem;
+        border-bottom   : .5rem solid $light-grey-3;
+
+        &:hover {
+            border-bottom: .5rem solid $light-green;
+        }
+    }
+
+    &__card:nth-child(2) {
+        border-bottom: .5rem solid $light-green;
+    }
+
+    &__card-image {
+        display      : block;
+        margin       : auto;
+        margin-bottom: 1.5rem;
+    }
+
+    &__card-title {
+        text-align : center;
+        font-weight: bold;
+    }
+
+    &__divider {
+        margin-top: 4rem;
+        border    : 1.2px dotted $light-grey-2;
+    }
+}
+
+// ------------------------------------Recognition-----------------------------------
+.recognition {
+
+    &__wrapper {
+        display              : grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap             : 2rem;
+        justify-content      : center;
+        align-items          : center;
+        margin-bottom        : 5rem;
+    }
+
+    &__title {
+        color: $dark-grey-2;
+    }
+
+    &__image {
+        max-width: 100%;
+        border   : .5rem solid $light-green;
+    }
+
+}
+
+
+//----------------------------------------------AGENT---------------------------
+
+.agent {
+    background-image     : url('../img/uploads/parallax_02.png');
+    background-attachment: fixed;
+    background-repeat    : no-repeat;
+    background-size      : cover;
+    color                : $light-grey-4;
+    height               : 100vh;
+    position             : relative;
+    z-index              : 0;
+
+
+    @include overlay(.9);
+
+    &__content,
+    &__details,
+    &__contact {
+        height        : 100%;
+        display       : flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-top: 1rem;
+    }
+
+    &__title,
+    &__subtitle {
+        text-align: center;
+        z-index   : 1000;
+    }
+
+    &__title,
+    &__details-title {
+        color: $white;
+    }
+
+    &__details-subtitle {
+        font-weight  : bold;
+        margin-bottom: .7rem;
+    }
+
+    &__details-description {
+        margin-bottom: 1rem;
+    }
+
+    &__details-title,
+    &__details-subtitle,
+    &__details-description,
+    &__contact-image,
+    &__contact-socials,
+    &__details-btn {
+        z-index: 1000;
+    }
+
+    &__details-btn {
+        align-self: flex-start;
+    }
+
+    &__wrapper {
+        display              : grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap             : 2.5rem;
+        margin-top           : 3rem;
+    }
+
+    &__contact {
+        display       : flex;
+        flex-direction: row;
+    }
+
+    &__contact-image {
+        max-width   : 53%;
+        max-height  : 90%;
+        border      : .5rem solid $light-green;
+        margin-right: .5rem;
+    }
+
+    &__contact-social {
+        padding: 1rem;
+    }
+
+    &__contact-icon {
+        margin-right    : .6rem;
+        background-color: rgba(15, 17, 17, 1);
+        padding         : .5rem;
+        border-radius   : 50%;
+    }
+
+
+}
+
+
+// ------------------------Testimonials------------------------------------------

@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "images",
+			"path": "..\\..\\..\\Desktop\\city-real-estate\\images"
+		},
+		{
+			"name": "realstate",
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Desktop\\city-real-estate\\uploads"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "realstate"
+	}
+}

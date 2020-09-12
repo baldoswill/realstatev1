@@ -1,0 +1,30 @@
+%btn {
+    padding    : 1em 2em;
+    display    : inline-block;
+    border     : none;
+    text-align : center;
+    cursor     : pointer;
+    font-weight: bold;
+    margin-top : 1.1rem;
+
+    &:hover {
+        background-color: $light-blue;
+    }
+}
+
+.btn-icon {
+    @extend %btn;
+    padding: .2em 1.1em;
+}
+
+.btn-regular {
+    @extend %btn;
+    background-color: $light-green;
+    color           : $white;
+}
+
+.btn-block {
+    @extend %btn;
+    display: block;
+    width  : 100%;
+}

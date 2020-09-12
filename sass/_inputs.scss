@@ -1,0 +1,16 @@
+%input {
+    display: inline-block;
+    padding: 1rem;
+    border : 1px solid $light-grey-2;
+    outline: none;
+}
+
+.input-half {
+    @extend %input;
+    width: 50%;
+}
+
+.input-regular {
+    @extend %input;
+    width: 100%;
+}

@@ -1,0 +1,202 @@
+.section-container {
+    max-width: $maxwidth;
+    margin   : 0 auto;
+    overflow : auto;
+}
+
+$sizes: (1, 2, 3, 4, 5);
+
+@each $size in $sizes {
+    .p-#{$size} {
+        padding: #{$size}rem;
+    }
+}
+
+@each $size in $sizes {
+    .py-#{$size} {
+        padding: #{$size}rem 0;
+    }
+}
+
+@each $size in $sizes {
+    .px-#{$size} {
+        padding: 0 #{$size}rem;
+    }
+}
+
+@each $size in $sizes {
+    .m-#{$size} {
+        margin: #{$size}rem;
+    }
+}
+
+@each $size in $sizes {
+    .my-#{$size} {
+        margin: #{$size}rem 0;
+    }
+}
+
+@each $size in $sizes {
+    .mx-#{$size} {
+        margin: 0 #{$size}rem;
+    }
+}
+
+@each $size in $sizes {
+    .mb-#{$size} {
+        margin-bottom: #{$size}rem;
+    }
+}
+
+@each $size in $sizes {
+    .mt-#{$size} {
+        margin-top: #{$size}rem;
+    }
+}
+
+@each $size in $sizes {
+    .mr-#{$size} {
+        margin-right: #{$size}rem;
+    }
+}
+
+@each $size in $sizes {
+    .ml-#{$size} {
+        margin-left: #{$size}rem;
+    }
+}
+
+
+.showcase-1 {
+    font-weight: normal;
+    font-size  : 4rem;
+}
+
+.showcase-2 {
+    font-size    : 2.5rem;
+    margin-bottom: 1.3rem;
+}
+
+.showcase-3 {
+    font-size  : 3rem;
+    font-weight: bold;
+}
+
+.heading-lead {
+    font-size  : 1.4rem;
+    font-weight: normal;
+}
+
+.subtitle-1 {
+    opacity    : .7;
+    font-size  : 1.1rem;
+    font-weight: bold;
+}
+
+@mixin overlay($opacity) {
+    &::after {
+        content         : '';
+        background-color: rgba(0, 0, 0, $opacity);
+        position        : absolute;
+        top             : 0;
+        left            : 0;
+        height          : 100%;
+        width           : 100%;
+        z-index         : 3;
+        overflow        : hidden;
+    }
+}
+
+.page {
+
+    @include overlay(.7);
+    position: relative;
+
+
+    &__header-wrapper {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+    }
+
+    &__header-breadcrumb {
+        justify-self    : end;
+        padding         : .6em 2em;
+        background-color: $light-green;
+        z-index         : 999;
+
+        &:hover {
+            background-color: $light-blue;
+        }
+    }
+
+    &__header-nonlink,
+    &__header-link,
+    &__header-title {
+        z-index: 999;
+    }
+
+    &__header-nonlink {
+        margin: 1rem 1.2rem;
+    }
+
+    &__header-link:hover {
+        color: $light-green;
+    }
+
+
+}
+
+.form {
+    z-index         : 1000;
+    background-color: $light-grey;
+    color           : $dark-grey-2;
+
+    &__subtitle {
+        display      : inline-block;
+        margin-left  : .5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__controls {
+        margin-bottom: 1.5rem;
+    }
+
+    &__controls:last-child {
+        margin-bottom: 0;
+    }
+
+    &__controls-flex {
+        display: flex;
+    }
+
+    &__input {
+        border: 1px solid $light-grey;
+
+        &:focus {
+            border: 1px solid $light-green;
+        }
+
+        &::placeholder {
+            color      : $light-grey-4;
+            font-weight: bold;
+        }
+    }
+
+    &__input:first-child {
+        margin-right: 1.2rem;
+    }
+
+    &__icon-envelope {
+        color: $light-green;
+    }
+
+    &__btn {
+        font-size: 1.2rem !important;
+    }
+
+    &__select {
+        color      : $light-grey-4;
+        font-weight: bold;
+    }
+}
