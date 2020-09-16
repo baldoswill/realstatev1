@@ -113,6 +113,53 @@ input {
         background-color: $light-green;
         color           : $white;
     }
+
+    &__burger {
+        border : 1px solid $light-grey-4;
+        width  : 50px;
+        height : 50px;
+        display: none;
+        padding: 1rem .5rem;
+        cursor: pointer;
+        
+        &:hover{
+            background-color: $light-green;                
+        }
+    }
+
+    &__burger-child {        
+        height: 3px;
+        margin-bottom: 5px;
+        background-color: $dark-grey-5;       
+    }
+
+    &__menu{
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 60px;
+        background-color: $white;
+        border: 1px solid $light-grey-3;
+        text-align: center;
+        width: 300px;
+    }
+
+
+    &__menu-item{
+        padding: .8rem;
+        border-bottom: 1px solid $light-grey-3;           
+    }
+
+    &__menu-link{
+        color: $dark-grey-3;
+        font-weight: bold;
+        
+        &:hover{
+            color: $light-green;
+        }
+    }
+
+    
 }
 
 // --------------------------Hero---------------------------------------------------
@@ -261,7 +308,7 @@ input {
         border   : .5rem solid $light-green;
     }
 
-    &__newsletter-input{
+    &__newsletter-input {
         width: 100%;
     }
 
@@ -613,6 +660,9 @@ input {
 // ----------------------Contact-----------------------------
 
 .contact {
+
+
+
     &__wrapper {
         display              : grid;
         grid-template-columns: repeat(2, 1fr);
@@ -650,10 +700,10 @@ input {
         margin-left: 2rem;
     }
 
-    &__form {
-        height: 100%;        
-       padding-bottom: -3rem !important;
+    .form {
+        height: 83%;
     }
+
 }
 
 
@@ -710,7 +760,7 @@ input {
 
     }
 
-    &__details{
+    &__details {
         margin-bottom: 1rem;
     }
 }
@@ -749,24 +799,28 @@ input {
 
 @media screen and (max-width: 768px) {
 
-
-
     .navbar {
         &__nav {
             display: block;
         }
 
         &__wrapper {
-            display: block;
+            justify-content: space-between;
         }
 
-        &__nav-group {
+        &__nav {
             display: none;
         }
 
-        &__nav-socials {
-            justify-content: flex-start;
+        &__burger {
+            display     : inline-block;
+            justify-self: end;
         }
+
+        &__menu-close{
+            display: inline-block;
+        }
+
     }
 
 
@@ -796,85 +850,86 @@ input {
 
     // Recognition------------------
 
-    .recognition{
+    .recognition {
 
         margin: -5rem 0;
 
-        &__wrapper{
+        &__wrapper {
             grid-template-columns: 1fr;
         }
 
-        &__title{
-            margin-top: .7rem;
+        &__title {
+            margin-top : .7rem;
             line-height: 1.3;
         }
     }
 
     // Agent----------------------------
 
-    .agent{
+    .agent {
 
         height: 100%;
 
-        &__wrapper{
+        &__wrapper {
             grid-template-columns: 1fr;
         }
 
-        &__contact-image{
-            max-width: 100%;
-            margin-top: -3rem;
+        &__contact-image {
+            max-width    : 100%;
+            margin-top   : -3rem;
             margin-bottom: 1rem;
         }
 
-        &__contact{
+        &__contact {
             flex-direction: column;
         }
 
-        
+
     }
 
-    .testimonials{
-        &__wrapper{
+    .testimonials {
+        &__wrapper {
             grid-template-columns: 1fr;
         }
     }
 
-    .footer{
-        &__wrapper{
+    .footer {
+        &__wrapper {
             display: block;
         }
 
-        &__links, &__about{
+        &__links,
+        &__about {
             display: none;
         }
 
-        &__siteinfo:last-child{
-            display: block;
+        &__siteinfo:last-child {
+            display        : block;
             justify-content: start;
-            margin-left: 0;
+            margin-left    : 0;
         }
 
-        &__socials{
+        &__socials {
             justify-self: start !important;
-            margin-top: 2rem;
-            margin-left: 0;
+            margin-top  : 2rem;
+            margin-left : 0;
         }
 
-        &__contacts{
+        &__contacts {
             justify-self: start !important;
         }
-    }   
+    }
 
-    .copyright{
-        &__wrapper{
+    .copyright {
+        &__wrapper {
             display: block;
         }
 
-        &__text{
+        &__text {
             margin-bottom: 1rem;
         }
 
-        &__newsletter-input{
+        &__newsletter-input {
             width: 100%;
         }
     }
@@ -882,24 +937,23 @@ input {
 
     // -------------------------About Page
 
-    .page{
-        &__header-wrapper{
+    .page {
+        &__header-wrapper {
             flex-direction: column;
         }
     }
-    
+
     // ----------------------Contact Page
 
-    .contact{
-        &__wrapper{
+    .contact {
+        &__wrapper {
             grid-template-columns: 1fr;
         }
 
-        &__btn{
-            width: 100%;
-            background-color: red;
-            margin-top: 5rem;
+        .form {
+            height: 100%;
         }
+
     }
 
 }

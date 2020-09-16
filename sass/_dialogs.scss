@@ -6,3 +6,57 @@
     height            : 100%;
 }
 
+
+.form {
+    z-index         : 1000;
+    background-color: $light-grey;
+    color           : $dark-grey-2;
+
+    &__subtitle {
+        display      : inline-block;
+        margin-left  : .5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__controls {
+        margin-bottom: 1.5rem;
+    }
+
+    &__controls:last-child {
+        margin-bottom: 0;
+    }
+
+    &__controls-flex {
+        display: flex;
+    }
+
+    &__input {
+        border: 1px solid $light-grey;
+
+        &:focus {
+            border: 1px solid $light-green;
+        }
+
+        &::placeholder {
+            color      : $light-grey-4;
+            font-weight: bold;
+        }
+    }
+
+    &__input:first-child {
+        margin-right: 1.2rem;
+    }
+
+    &__icon-envelope {
+        color: $light-green;
+    }
+
+    &__btn {
+        font-size: 1.2rem !important;
+    }
+
+    &__select {
+        color      : $light-grey-4;
+        font-weight: bold;
+    }
+}

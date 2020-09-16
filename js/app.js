@@ -30,3 +30,13 @@ $('#navbar a, .btn').on('click',function(event){
     }
 });
 
+$('.navbar__burger').on('click', function(event){    
+    $('.navbar__menu').toggleClass('navbar__menu-close');
+
+    setTimeout(function(){
+        $('.navbar__menu').removeClass('navbar__menu-close');
+    }, 5000);
+});
+
+
+
